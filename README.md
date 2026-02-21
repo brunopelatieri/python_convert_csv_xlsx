@@ -1,12 +1,12 @@
-# 📋 Chatwoot CSV → Excel Converter
+# 📋 CSV → Excel Converter
 
-> Converte exportações de contatos do **Chatwoot** de CSV para planilha Excel (`.xlsx`), corrigindo automaticamente caracteres especiais quebrados como acentos e cedilha.
+> Converte exportações de contatos de **CSV** para planilha Excel **(`.xlsx`)**, corrigindo automaticamente caracteres especiais quebrados como acentos e cedilha.
 
 ---
 
 ## 🔍 O Problema
 
-Ao exportar contatos pelo Chatwoot, o arquivo CSV gerado frequentemente apresenta caracteres especiais corrompidos:
+Ao exportar contatos de algumas fontes, o arquivo CSV gerado frequentemente apresenta caracteres especiais corrompidos:
 
 | ❌ Com problema | ✅ Corrigido |
 |---|---|
@@ -15,7 +15,7 @@ Ao exportar contatos pelo Chatwoot, o arquivo CSV gerado frequentemente apresent
 | `JoÃ£o da Silva` | `João da Silva` |
 | `ApareciÃ§a` | `Aparecição` |
 
-Isso acontece por um conflito de **encoding** — o arquivo é salvo em UTF-8 pelo Chatwoot, mas muitos programas (como o Excel) o abrem assumindo Latin-1/ISO-8859-1, ou vice-versa.
+Isso acontece por um conflito de **encoding** — o arquivo é salvo em UTF-8 pela fonte, mas muitos programas (como o Excel) o abrem assumindo Latin-1/ISO-8859-1, ou vice-versa.
 
 ---
 
@@ -53,14 +53,14 @@ pip install pandas openpyxl
 
 ### 3. Baixar o script
 
-Clone o repositório ou baixe o arquivo `converter_chatwoot.py` diretamente.
+Clone o repositório ou baixe o arquivo `convert.py` diretamente.
 
 ```bash
 git clone https://github.com/seu-usuario/chatwoot-csv-excel.git
 cd chatwoot-csv-excel
 ```
 
-### 4. Exportar os contatos no Chatwoot
+### 4. Exportar os contatos no Chatwoot, como exemplo
 
 No Chatwoot, vá em: **Contatos → Importar/Exportar → Exportar Contatos**
 
@@ -70,12 +70,12 @@ O arquivo será baixado como `.csv`.
 
 **Uso básico** (gera o `.xlsx` com o mesmo nome do CSV):
 ```bash
-python converter_chatwoot.py contatos.csv
+python convert.py contatos.csv
 ```
 
 **Especificando o nome do arquivo de saída:**
 ```bash
-python converter_chatwoot.py contatos.csv minha_planilha.xlsx
+python convert.py contatos.csv minha_planilha.xlsx
 ```
 
 ---
@@ -89,7 +89,7 @@ python converter_chatwoot.py contatos.csv minha_planilha.xlsx
 cd C:\Users\SeuNome\Downloads
 
 # Execute
-python converter_chatwoot.py contatos.csv
+python convert.py contatos.csv
 ```
 
 ### macOS / Linux (Terminal)
@@ -99,7 +99,7 @@ python converter_chatwoot.py contatos.csv
 cd ~/Downloads
 
 # Execute
-python3 converter_chatwoot.py contatos.csv
+python3 convert.py contatos.csv
 ```
 
 > 💡 **Dica:** coloque o script na mesma pasta que o arquivo CSV para facilitar a execução.
@@ -111,10 +111,9 @@ python3 converter_chatwoot.py contatos.csv
 ```
 chatwoot-csv-excel/
 │
-├── converter_chatwoot.py   # Script principal
+├── convert.py   # Script principal
 ├── README.md               # Esta documentação
-└── exemplo/
-    └── contatos_exemplo.csv  # Arquivo de exemplo para teste
+└── contatos_exemplo.csv  # Arquivo de exemplo para teste
 ```
 
 ---
@@ -190,4 +189,12 @@ Dúvidas ou sugestões? Abra uma [issue](../../issues) no repositório.
 
 ---
 
-*Feito para facilitar a vida de quem usa o Chatwoot no dia a dia* 🚀
+## 👤 Author
+
+**Bruno Pelatieri Goulart**
+- 🌐 [brunogoulart.com.br](https://brunogoulart.com.br)
+- 🤖 [bru.ia.br](https://bru.ia.br)
+
+---
+
+*Feito para facilitar a vida de quem usa o CSV no dia a dia* 🚀
